@@ -36,7 +36,7 @@ Where:
 
 - Use sender's shared secret with recipient (last hop) together with `rho` to generate 1300 random Chacha20 byte stream and use that random byte stream to encrypt the whole onion payload (XORing it). 
 
-- If you're working on the last hop, you'll need to include the filler as part of the onion payload.
+- If you're working on the last hop, you'll need to include the [filler](https://github.com/jimasuen/onion-routing-notes/blob/main/filler-generation.md) as part of the onion payload.
 
 - The HMAC for this leg of the onion payload (not the aforementioned "fake" HMAC of the recipient) is derived using the `mu` key (which itself was derived from the `mu` constant and the shared secret) and the packet contents. The result will be used as the next hop's HMAC.
 
